@@ -40,7 +40,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.0
+          tags: malusevd99/php-ext-dev:8.0
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.0,DEBUG=0,ZTS=0
@@ -79,7 +79,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.0-debug
+          tags: malusevd99/php-ext-dev:8.0-debug
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.0,DEBUG=1,ZTS=0
@@ -118,7 +118,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.0-debug-zts
+          tags: malusevd99/php-ext-dev:8.0-debug-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.0,DEBUG=1,ZTS=1
@@ -157,7 +157,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.1
+          tags: malusevd99/php-ext-dev:8.1
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.1,DEBUG=0,ZTS=0
@@ -196,7 +196,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.1-debug
+          tags: malusevd99/php-ext-dev:8.1-debug
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.1,DEBUG=1,ZTS=0
@@ -235,7 +235,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: brossquad/php-ext-dev:8.1-debug-zts
+          tags: malusevd99/php-ext-dev:8.1-debug-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: PHP_VERSION=8.1,DEBUG=1,ZTS=1
