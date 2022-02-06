@@ -2,6 +2,7 @@
 
 DEBUG=$1
 ZTS=$2
+CLANG=$3
 
 FLAGS=" --with-curl \
     --with-zlib \
@@ -35,6 +36,10 @@ fi
 
 if [ "$ZTS" == "1" ]; then
     FLAGS="$FLAGS --enable-zts"
+fi
+
+if [ "$CLANG" == "1" ]; then
+    FLAGS="$FLAGS --with-pic"
 fi
 
 ./configure $FLAGS
