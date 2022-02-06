@@ -1,0 +1,40 @@
+#!/bin/bash
+
+DEBUG=$1
+ZTS=$2
+
+FLAGS=" --with-curl \
+    --with-zlib \
+    --with-pcre-jit \
+    --enable-calendar \
+    --with-ffi \
+    --enable-intl \
+    --enable-pcntl \
+    --enable-sockets \
+    --with-sodium \
+    --with-password-argon2 \
+    --enable-sysvshm \
+    --with-xsl \
+    --enable-mysqlnd \
+    --enable-shmop \
+    --with-readline \
+    --without-pdo-sqlite \
+    --enable-mbstring \
+    --enable-bcmath \
+    --with-openssl \
+    --enable-fpm \
+    --without-sqlite3 \
+    --with-gmp \
+    --without-pdo-sqlite \
+    --disable-phar \
+"
+
+if [ "$DEBUG" == "1" ]; then
+    FLAGS="$FLAGS --enable-debug --with-valgrind --enable-phpdbg"
+fi
+
+if [ "$ZTS" == "1" ]; then
+    FLAGS="$FLAGS --enable-zts"
+fi
+
+./configure $FLAGS
