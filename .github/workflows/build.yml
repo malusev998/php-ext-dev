@@ -82,7 +82,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: malusevd99/php-ext-dev:8.0
+          tags: malusevd99/php-ext-dev:8.0-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: |
@@ -250,7 +250,7 @@ jobs:
           pull: true
           context: .
           platforms: linux/amd64,linux/arm64
-          tags: malusevd99/php-ext-dev:8.1
+          tags: malusevd99/php-ext-dev:8.1-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           build-args: |
