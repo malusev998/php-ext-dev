@@ -43,7 +43,10 @@ jobs:
           tags: malusevd99/php-ext-dev:8.0
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.0,DEBUG=0,ZTS=0
+          build-args: |
+            PHP_VERSION=8.0
+            DEBUG=0
+            ZTS=0
   php80-debug:
     runs-on: ubuntu-latest
     steps:
@@ -82,7 +85,10 @@ jobs:
           tags: malusevd99/php-ext-dev:8.0-debug
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.0,DEBUG=1,ZTS=0
+          build-args: |
+            PHP_VERSION=8.0
+            DEBUG=1
+            ZTS=0
   php80-debug-zts:
     runs-on: ubuntu-latest
     steps:
@@ -121,7 +127,10 @@ jobs:
           tags: malusevd99/php-ext-dev:8.0-debug-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.0,DEBUG=1,ZTS=1
+          build-args: |
+            PHP_VERSION=8.0
+            DEBUG=1
+            ZTS=1
   php81:
     runs-on: ubuntu-latest
     steps:
@@ -160,7 +169,10 @@ jobs:
           tags: malusevd99/php-ext-dev:8.1
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.1,DEBUG=0,ZTS=0
+          build-args: |
+            PHP_VERSION=8.1
+            DEBUG=0
+            ZTS=0
   php81-debug:
     runs-on: ubuntu-latest
     steps:
@@ -199,7 +211,10 @@ jobs:
           tags: malusevd99/php-ext-dev:8.1-debug
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.1,DEBUG=1,ZTS=0
+          build-args: |
+            PHP_VERSION=8.1
+            DEBUG=1
+            ZTS=0
   php81-debug-zts:
     runs-on: ubuntu-latest
     steps:
@@ -238,4 +253,7 @@ jobs:
           tags: malusevd99/php-ext-dev:8.1-debug-zts
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-          build-args: PHP_VERSION=8.1,DEBUG=1,ZTS=1
+          build-args: |
+            PHP_VERSION=8.1
+            DEBUG=1
+            ZTS=1
