@@ -1,18 +1,19 @@
 ARG PHP_VERSION=8.0
 
-FROM php:${PHP_VERSION}
+FROM php:${PHP_VERSION}-cli
 
 ARG DEBUG=0
 ARG ZTS=0
 ARG CLANG=0
 
 COPY ./configure-php /bin
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN apt update && apt upgrade -y \
     && apt install -y \
         git \
         vim \
+        libsqlite3-dev \
+        libpq-dev \
         libxslt-dev \
         libargon2-dev \
         libsodium-dev \
@@ -28,14 +29,16 @@ RUN apt update && apt upgrade -y \
         clang \
         clang-format \
         clang-tidy \
+        libenchant-2-dev \
+        libpng-dev \
+        libwebp-dev \
+        libjpeg-dev \
+        libfreetype6-dev \
+        libldap-dev \
     && docker-php-source extract \
     && cd /usr/src/php \
     && /bin/configure-php "${DEBUG}" "${ZTS}" "${CLANG}" \
     && make -j8 \
     && make -j8 install \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php composer-setup.php --install-dir=/bin --filename=composer \
-    && install-php-extensions \
-        intl zip bcmath pcntl \
-        gmp opcache amqp apcu igbinary \
-        ast redis mongodb ds decimal json_post
+    && php composer-setup.php --install-dir=/bin --filename=composer

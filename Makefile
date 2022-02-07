@@ -14,7 +14,7 @@ ifeq ($(PHP_ZTS),1)
 endif
 
 .PHONY: build-php
-build-php8.0:
+build:
 	@echo $(TAG)
 	@docker build \
 		--build-arg DEBUG=$(PHP_DEBUG) \

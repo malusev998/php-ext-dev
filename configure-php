@@ -12,6 +12,7 @@ FLAGS=" --with-curl \
     --enable-intl \
     --enable-pcntl \
     --enable-sockets \
+    --with-ldap \
     --with-sodium \
     --with-password-argon2 \
     --enable-sysvshm \
@@ -19,15 +20,24 @@ FLAGS=" --with-curl \
     --enable-mysqlnd \
     --enable-shmop \
     --with-readline \
-    --without-pdo-sqlite \
     --enable-mbstring \
     --enable-bcmath \
     --with-openssl \
     --enable-fpm \
-    --without-sqlite3 \
     --with-gmp \
-    --without-pdo-sqlite \
-    --disable-phar \
+    --with-enchant \
+    --enable-exif  \
+    --enable-gd \
+    --with-webp \
+    --with-jpeg \
+    --with-freetype \
+    --with-gettext \
+    --with-mysqli \
+    --with-pdo-mysql \
+    --with-pdo-pgsql \
+    --with-pgsql \
+    --with-xsl \
+    --with-pear \
 "
 
 if [ "$DEBUG" == "1" ]; then
