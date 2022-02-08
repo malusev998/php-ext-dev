@@ -35,6 +35,10 @@ RUN apt update && apt upgrade -y \
         libjpeg-dev \
         libfreetype6-dev \
         libldap-dev \
+        libtool  \
+        autoconf-archive \
+        autoconf \
+        build-essential \
     && docker-php-source extract \
     && cd /usr/src/php \
     && /bin/configure-php "${DEBUG}" "${ZTS}" "${CLANG}" \
