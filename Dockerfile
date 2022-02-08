@@ -39,6 +39,7 @@ RUN apt update && apt upgrade -y \
         autoconf-archive \
         autoconf \
         build-essential \
+        cmake \
     && docker-php-source extract \
     && cd /usr/src/php \
     && /bin/configure-php "${DEBUG}" "${ZTS}" "${CLANG}" \
